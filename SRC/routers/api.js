@@ -3,12 +3,14 @@ var app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+//Rota padrão
+
 const router = express.Router();
 app.use('/',router.get ('/',(req, res)=>{
     res.status(200).send("<h1>API - CHAT</h1>")
 }));
 
-//nome do propretario e a sua versão
+//Rota com o nome do propretario e a sua versão
 
 app.use("/",router.get("/sobre",(req, res, next)=>{
     res.status(200).send({
@@ -18,11 +20,19 @@ app.use("/",router.get("/sobre",(req, res, next)=>{
     })
 }));
 
-//Lista de salas do chat
+//Rota de Lista de salas do chat
 
 app.use("/salas",router.get("/salas",(req, res, next) => {
-    const salaController = require("../controllers/salaControllers");
+    const salaController = require("../controllers/usuarioControllers");
     let resp=salaController.get();
+    res.status(200).send(resp);
+}));
+
+//Rota de entrar no chat
+
+app.use("/entrar",router.post("/entrar", async(req, res, next) => {
+    const usuarioController = require("../controllers/usuarioControllers");
+    let resp = await usuarioController.entrar(req.body.nick);
     res.status(200).send(resp);
 }));
 
