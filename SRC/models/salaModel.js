@@ -38,5 +38,8 @@ async function listarSalas(){
     ];
 }
 
+let buscarSala = async (idsala)=>{
+    return db.findOne("salas",idsala);
+}
 
 module.exports = {listarSalas};
