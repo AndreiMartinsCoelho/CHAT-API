@@ -23,6 +23,8 @@ async function findAll(collection){
 async function insertOne(collection, objeto){
     const db = await connect();
     return db.collection(collection).insertOne(objeto);
+
 }
 
 module.exports = {findAll}
+module.exports = {insertOne: insertOne};

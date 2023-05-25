@@ -6,8 +6,6 @@ function listarSalas(){
     return db.findAll("salas");
 }
 
-module.exports = {listarSalas}
-
 //Lista das salas
 
 function listarSalas(){
@@ -36,3 +34,5 @@ function listarSalas(){
         }
     ];
 }
+
+module.exports = {listarSalas};

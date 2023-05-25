@@ -1,6 +1,6 @@
 const db = require("./db");
-async function registrarUsuario(nick){
+async function entrar(nick){
     return await db.insertOne("usuario",{"nick": nick});
 }
 
-module.exports = {registrarUsuario}
+module.exports = {entrar}
