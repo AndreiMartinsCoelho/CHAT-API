@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+const token = require('./util/token');
 
 //Rota padrão
 
@@ -25,8 +26,12 @@ app.use("/sobre",router.get("/sobre", async (req, res, next)=>{
 
 app.use("/salas",router.get("/salas", async (req, res, next) => {
     const salaController = require("./controller/salaController");
-    let resp=salaController.get();
-    res.status(200).send(resp);
+    if(await token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) {
+        let resp= await salaController.get();
+        res.status(200).send(resp);
+    }else{
+        res.status(400).send({msg:"Usuário não autorizado"});
+    }
 }));
 
 //Rota de entrar no chat

@@ -8,7 +8,10 @@ function listarSalas(){
 
 //Lista das salas
 
-function listarSalas(){
+async function listarSalas(){
+
+    let salas= await db.findAll("salas");
+
     return[
         {
             "_id":{
@@ -34,5 +37,6 @@ function listarSalas(){
         }
     ];
 }
+
 
 module.exports = {listarSalas};
