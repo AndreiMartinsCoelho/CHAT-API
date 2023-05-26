@@ -38,13 +38,22 @@
         ];
     }
 
-let buscarSala = async (idsala)=>{
-    return db.findOne("salas",idsala);
-}
+    let buscarSala = async (idsala) => {
+        let sala = await db.findOne("salas", { _id: idsala });
+        if (sala.msgs) {
+          let msgs = [];
+          sala.msgs.forEach((msg) => {
+            if (msg.timestamp >= timestamp) {
+              msgs.push(msg);
+            }
+          });
+          return msgs;
+        }
+        return [];
+      };
       
-
-let atualizarMensagens=async (sala)=>{
-    return await db.updateOne("salas", sala,{_id:sala._id});
-}
+      let atualizarMensagens = async (sala) => {
+        return await db.updateOne("salas", { _id: sala._id }, { $set: sala });
+      };
 
 module.exports = { listarSalas, buscarSala, atualizarMensagens };
