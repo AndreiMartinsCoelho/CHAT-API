@@ -1,5 +1,5 @@
 require("dotenv").config();
-const app = require("../SRC/api");
+const app = require("../SRC/routers/api");
 
 app.use((req,res, next)=>{
   next();

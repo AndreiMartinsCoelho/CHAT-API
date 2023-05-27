@@ -11,4 +11,6 @@ exports.entrar = async (nick) => {
     } 
 };
 
+
+
 module.exports = usuarioModel;

@@ -1,59 +1,49 @@
+const db = require("./db");
 
-    //Requerimento do MongoDB
+async function listarSalas() {
+  let salas = await db.findAll("salas");
 
-    const db = require("./db");
-    function listarSalas(){
-        return db.findAll("salas");
+  return salas;
+}
+
+async function criarSala(nome, tipo, chave) {
+    let sala = {
+      nome: nome,
+      tipo: tipo
+    };
+  
+    if (tipo === "privada" && chave) {
+      sala.chave = chave;
     }
+  
+    return await db.insertOne("salas", sala);
+  }
 
-    //Lista das salas
-
-    async function listarSalas(){
-
-        let salas= await db.findAll("salas");
-
-        return[
-            {
-                "_id":{
-                    "$oid":"5435b4343h543b43nh"
-                },
-                "nome":"Fãs do Tio Phill XBOX",
-                "tipo":"publica"
-            },
-            {
-                "_id":{
-                    "$oid":"8787787878mn87k87"
-                },
-                "nome":"Cancelados do Twitter",
-                "tipo":"privada",
-                "chave":"AT879021W"
-            },
-            {
-                "_id":{
-                    "$oid":"2123224334mwqwq"
-                },
-                "nome":"Hospicio da EA e UBI",
-                "tipo":"publica"
-            }
-        ];
+  async function entrarNaSala(idUser, idSala) {
+    const sala = await db.findOne("salas", idSala);
+    if (!sala) {
+      return false; // Sala não encontrada
     }
+  
+    const usuario = await db.findOne("usuarios", idUser);
+    if (!usuario) {
+      return false; // Usuário não encontrado
+    }
+  
+    usuario.sala = { _id: sala._id, nome: sala.nome, tipo: sala.tipo };
+  
+    const result = await db.updateOne("usuarios", usuario, { _id: usuario._id });
+    return result.modifiedCount > 0;
+  }
 
-    let buscarSala = async (idsala) => {
-        let sala = await db.findOne("salas", { _id: idsala });
-        if (sala.msgs) {
-          let msgs = [];
-          sala.msgs.forEach((msg) => {
-            if (msg.timestamp >= timestamp) {
-              msgs.push(msg);
-            }
-          });
-          return msgs;
-        }
-        return [];
-      };
-      
-      let atualizarMensagens = async (sala) => {
-        return await db.updateOne("salas", { _id: sala._id }, { $set: sala });
-      };
+async function buscarSala(idsala) {
+  let sala = await db.findOne("salas", { _id: idsala });
+  return sala;
+}
 
-module.exports = { listarSalas, buscarSala, atualizarMensagens };
+async function atualizarMensagens(sala) {
+    const { _id, msgs } = sala;
+    return await db.updateOne("salas", { _id: _id }, { $set: { msgs: msgs } });
+  }
+
+module.exports = { listarSalas, buscarSala, atualizarMensagens, criarSala, entrarNaSala};

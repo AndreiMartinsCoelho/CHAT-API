@@ -2,8 +2,8 @@ var express = require("express");
 var app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-const token = require('./util/token');
-const salaController = require('./controller/salaController');
+const token = require('../util/token');
+const salaController = require('../controller/salaController');
 
 //Rota padrão
 
@@ -26,7 +26,7 @@ app.use("/sobre",router.get("/sobre", async (req, res, next)=>{
 //Rota de Lista de salas do chat
 
 app.use("/salas",router.get("/salas", async (req, res, next) => {
-    const salaController = require("./controller/salaController");
+    const salaController = require("../controller/salaController");
     if(await token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) {
         let resp= await salaController.get();
         res.status(200).send(resp);
@@ -35,10 +35,16 @@ app.use("/salas",router.get("/salas", async (req, res, next) => {
     }
 }));
 
+app.use("/salas/criar", router.post("/salas/criar", async (req, res) => {
+    if (!token.checkToken(req.headers.token, req.headers.iduser, req.headers.nick)) return false;
+    let resp = await salaController.criarSala(req.body.nome, req.body.tipo, req.body.chave);
+    res.status(200).send(resp);
+}));
+
 //Rota de entrar no chat
 
 app.use("/entrar",router.post("/entrar", async(req, res, next) => {
-    const usuarioController = require("./controller/usuarioController");
+    const usuarioController = require("../controller/usuarioController");
     let resp = await usuarioController.entrar(req.body.nick);
     res.status(200).send(resp);
 }));
@@ -48,13 +54,13 @@ app.use("/entrar",router.post("/entrar", async(req, res, next) => {
 app.use("/sala/entrar", router.put("/sala/entrar", async (req, res)=>{
     if(!token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) 
     return false;
-    let resp= await salaController.entrar(req.headers.iduser, req.query.idsala);
+    let resp= await salaController.entrarNaSala(req.headers.iduser, req.query.idsala);
     res.status(200).send(resp);
 }));
 
 //Rota de enviar mensagem no chat 
   
-app.use("/sala/mensagem/", router.post("/sala/mensagem", async (req, res) => {
+app.use("/sala/mensagem", router.post("/sala/mensagem", async (req, res) => {
     if(!token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) return false;
     let resp= await salaController.enviarMensagem(req.headers.nick, req.body.msg,req.body.idSala);
     res.status(200).send(resp);

@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 
-const checkToken = async (token, id, key) => {
+const checkToken = async (token, id, nick, key) => {
   try {
     const decoded = await verifyToken(token, key);
-    return decoded.id === id;
+    return decoded.id === id && decoded.nick === nick;
   } catch (err) {
     return false;
   }
@@ -12,35 +12,27 @@ const checkToken = async (token, id, key) => {
 const verifyToken = (token, key) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, key, (err, decoded) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(decoded);
-      }
+      if (err) reject(err);
+      else resolve(decoded);
     });
   });
 };
 
 const setToken = async (id, key) => {
-  if (id) {
-    try {
-      const token = await signToken({ id }, key);
-      return token;
-    } catch (err) {
-      console.error(err);
-    }
+  if (!id) return false;
+
+  try {
+    return await signToken({ id }, key);
+  } catch (err) {
+    console.error(err);
   }
-  return false;
 };
 
 const signToken = (payload, key) => {
   return new Promise((resolve, reject) => {
     jwt.sign(payload, key, { expiresIn: 28800 }, (err, token) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(token);
-      }
+      if (err) reject(err);
+      else resolve(token);
     });
   });
 };

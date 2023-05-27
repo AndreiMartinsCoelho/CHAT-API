@@ -39,11 +39,10 @@ let findOne = async (collection, _id) => {
   }
   
   
-let updateOne= async (collection, object, param)=>{
+  let updateOne= async (collection, object, param)=>{
     const db = await connect();
     let result= await db.collection(collection).updateOne(param, { $set: object} );
     return result;
-}
+  }
   
-
 module.exports = { findAll, findOne, updateOne, insertOne };
