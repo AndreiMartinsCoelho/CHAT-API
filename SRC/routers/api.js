@@ -52,9 +52,16 @@ app.use("/entrar",router.post("/entrar", async(req, res, next) => {
 //Rota de entrar na sala
 
 app.use("/sala/entrar", router.put("/sala/entrar", async (req, res)=>{
-    if(!token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) 
-    return false;
-    let resp= await salaController.entrarNaSala(req.headers.iduser, req.query.idsala);
+    if(!token.checkToken(req.headers.token,req.headers.iduser,req.headers.nick)) return false;
+    let resp= await salaController.entrar(req.headers.iduser, req.query.idsala);
+    res.status(200).send(resp);
+  }))
+
+//Sair da sala
+
+app.use("/sair", router.post("/sair", async (req, res, next) => {
+    const salaController = require("../controller/salaController");
+    let resp = await salaController.sairDaSala(req.body.nick); // Chamada ao método sairDaSala no controller de usuário
     res.status(200).send(resp);
 }));
 

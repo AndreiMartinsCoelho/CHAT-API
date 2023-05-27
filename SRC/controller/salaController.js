@@ -64,16 +64,15 @@ salaController.criarSala=async(nome, tipo, chave) => {
   return await salaModel.criarSala(sala);
 }
 
-salaController.entrarNaSala = async (iduser, idsala) => {
-  const sala = await salaModel.buscarSala(idsala);
+salaController.sairDaSala = async (iduser) => {
   let usuarioModel = require('../models/usuarioModel');
   let user = await usuarioModel.buscarUsuario(iduser);
-  user.sala = { _id: sala._id, nome: sala.nome, tipo: sala.tipo };
+  user.sala = null; // Remover a referência à sala
   if (await usuarioModel.alterarUsuario(user)) {
-    return { msg: "OK", timestamp: timestamp = Date.now() };
+    return { msg: "OK", timestamp: Date.now() };
   }
   return false;
-}
+};
 
 module.exports = salaController;
 

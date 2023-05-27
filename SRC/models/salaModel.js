@@ -36,14 +36,26 @@ async function criarSala(nome, tipo, chave) {
     return result.modifiedCount > 0;
   }
 
-async function buscarSala(idsala) {
-  let sala = await db.findOne("salas", { _id: idsala });
-  return sala;
-}
+  async function sairDaSala(idUser) {
+    const usuario = await db.findOne("usuarios", idUser);
+    if (!usuario) {
+      return false; // Usuário não encontrado
+    }
+  
+    usuario.sala = null; // Remover a referência à sala
+  
+    const result = await db.updateOne("usuarios", usuario, { _id: usuario._id });
+    return result.modifiedCount > 0;
+  }
+
+  let buscarSala = async (idsala)=>{
+    return db.findOne("salas",idsala);
+  }
+  
 
 async function atualizarMensagens(sala) {
     const { _id, msgs } = sala;
     return await db.updateOne("salas", { _id: _id }, { $set: { msgs: msgs } });
   }
 
-module.exports = { listarSalas, buscarSala, atualizarMensagens, criarSala, entrarNaSala};
+module.exports = { listarSalas, buscarSala, atualizarMensagens, criarSala, entrarNaSala, sairDaSala};
