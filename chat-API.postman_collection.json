@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "87e95c34-85ca-459b-85ef-326799eb77e8",
+		"name": "chat-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24466170",
+		"_collection_link": "https://lively-astronaut-214709.postman.co/workspace/New-Team-Workspace~17bc89fb-9627-4874-8435-0164aa7374d5/collection/24466170-87e95c34-85ca-459b-85ef-326799eb77e8?action=share&creator=24466170&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "entrar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/entrar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"entrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sobre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sobre",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sobre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/salas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"salas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criarSalas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/salas/criar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"salas",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salaEntrar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sala/entrar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sala",
+						"entrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salaMensagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sala/mensagem",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sala",
+						"mensagem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sairSala",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sair",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sair"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
