@@ -20,7 +20,7 @@
 }
 
 .logo img{
-    width: 20%;
+    width: 300px;
 }
 
 .prici{
@@ -293,4 +293,272 @@
     border-color: white!important;
     color: white!important;
     cursor: pointer;
+}
+
+nav{
+    border-bottom: solid 2px black!important;
+}
+
+nav img{
+    width: 150px!important;
+    margin: 0!important;
+}
+
+nav img :active{
+    outline: none!important;
+}
+
+nav{
+    transition: all 0.3s ease-in-out!important;
+}
+
+nav button{
+    background-color: #5470FF!important;
+    border: solid 3px black!important;
+    margin: 3%!important;
+}
+
+nav button:hover{
+    background-color: blue!important;
+    border: solid 3px black!important;
+}
+
+#cSala{
+    padding: 10!important;
+    border: black solid 3px!important;
+    border-radius: 10px;
+    background-color: white!important;
+    color: #5470FF!important;
+    font-size: 10pt!important;
+    font-weight: 800!important;
+    margin: 5%!important;
+}
+
+#cSala:active{
+    background-color: blue!important;
+    border: solid 3px white!important;
+    color: white!important;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transform: translate(0, 2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#rooms{
+    margin: 2%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rooms:focus{
+    outline: none!important;
+}
+
+#rooms button{
+    width: 48%!important;
+    height: 10vh;
+    border: solid 3px black!important;
+    border-radius: 15px;
+    background-color: #5470FF;
+    color: #fff!important;
+    font-size: 24px!important;
+    font-weight: 800!important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0px 4px #000;
+}
+
+#divSalas{
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
+    flex-direction: column!important;
+}
+
+#sala-disp{
+    width: 80%;
+    height: 12vh;
+    background-color: white;
+    border-radius: 15px;
+    border: #000 solid 3px;
+    margin-bottom: 3%!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#img-sala{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-sala img{
+    width: 70px;
+    height: 70px;
+    border-color: black;
+    border: solid 3.5px;
+    border-radius: 50px;
+    box-shadow: 0 0px 4px #000;
+}
+
+#nome-sala{
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-shadow: 0 0px 2px #000;
+    margin: 3%!important;
+    width: 40%;
+}
+
+#priva-sala{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    background-color: transparent;
+    margin-right: 3%!important;
+    margin-left: 3%!important;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-shadow: 0 0px 1px #000;
+}
+
+#priva-sala:hover{
+    cursor: pointer;
+}
+
+#priva-sala:focus{
+    outline: none!important;
+}
+
+#divCreate{
+    border-radius: 15px;
+    background-color: #171717;  
+    width: 70vw;
+    margin-left: 15%!important;
+    margin-bottom: 2%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.room-label {
+    width: 30%;
+    color: #B4ADAD!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-name{
+    width: 97.5%;
+    margin-left: 2.5%!important;
+    height: 8vh;
+    border: solid 3px #5470FF;
+    border-radius: 15px;
+    padding: 15px!important;
+    color: black!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+  
+.room-name:focus{
+    outline: none!important;
+}
+
+.room-checkbox{
+    width: 4vw;
+    height: 3vh;
+    padding: 15px!important;
+}
+
+.room-checkbox-label{
+    width: 30%;
+    color: #B4ADAD;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    text-align: center;
+}
+
+.room-button{
+    width: 40%;
+    height: 8vh;
+    border: solid 3px #5470FF;
+    border-radius: 15px;
+    background-color: #5470FF;
+    color: #fff!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    margin: 2%!important;
+}
+
+.room-button:hover{
+    cursor: pointer;
+}
+
+.room-button:focus{
+    outline: none!important;
+}
+
+.room-button:active{
+    background-color: blue!important;
+    border: solid 3px white!important;
+    color: white!important;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transform: translate(0, 2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.room-exit-button{
+    width: 16.5%;
+    height: 8vh;
+    border: solid 3px #5470FF;
+    border-radius: 15px;
+    background-color: #5470FF;
+    color: #fff!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    margin-top: 2%!important;
+}
+
+.room-private{
+    width: 250px;
+    height: 8vh;
+    border: solid 3px #5470FF;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    margin: 2.5%!important;
+    padding: 15px!important;
+}
+
+.room-private:hover{
+    cursor: pointer;
+}
+
+.room-private:focus{
+    outline: none!important;
+    border-color: #B4ADAD;
+}
+
+.tittle-create{
+    color: #fff!important;
+    font-size: 24px!important;
+    font-weight: 800!important; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px!important;
 }

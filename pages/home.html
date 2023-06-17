@@ -10,38 +10,106 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-
     <!-- Navbar -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <header class="cab-chat">
-                    <nav class="navbar-chat" >
-                        <div class="container-fluid">
-
-                            <div class="col-sm-6">
-                                <div id="logo-chat">
-                                    <img src="../images/default_transparent_1000x1000 2.png" alt="logo-chat">
-                                </div>
-
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div id="btn-sala">
-                                    <button id="btn-criar">+</button>
-                                    <p>Create rooms</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </nav>
-                </header>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../pages/home.html">
+                <img src="../images/default_transparent_1000x1000 2.png">
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button id="cSala">Create rooms</button>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
+      </nav>
 
+    <!-- Main -->
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="rooms">
+                        <button>rooms you participate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="divCreate"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12"  >
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12" id="divSalas">
+                                    <div id="sala-disp">
+                                        <div id="img-sala"> 
+                                            <img src="../images/logo_cancelados 1.png" alt="Imagem da sala">
+                                        </div>
+                                        <div id="nome-sala">
+                                            <p>Cancelados do Twitter</p>
+                                        </div>
+                                        <button id="priva-sala">
+                                            <img src="../images/Vector.png" alt="Cadeado">
+                                            <p>Private</p>
+                                        </button>
+                                    </div>
+                                    <div id="sala-disp">
+                                        <div id="img-sala"> 
+                                            <img src="../images/LEGO_Star Wars 1.png" alt="Imagem da sala">
+                                        </div>
+                                        <div id="nome-sala">
+                                            <p>Guerra nas estrelas</p>
+                                        </div>
+                                        <button id="priva-sala">
+                                            <img src="../images/Vector (1).png" alt="Cadeado">
+                                            <p>Public</p>
+                                        </button>
+                                    </div>
+                                    <div id="sala-disp">
+                                        <div id="img-sala"> 
+                                            <img src="../images/winx_logo 1.png" alt="Imagem da sala">
+                                        </div>
+                                        <div id="nome-sala">
+                                            <p>Clube das winx</p>
+                                        </div>
+                                        <button id="priva-sala">
+                                            <img src="../images/Vector (1).png" alt="Cadeado">
+                                            <p>Private</p>
+                                        </button>
+                                    </div>
+
+                                    <div id="sala-disp">
+                                        <div id="img-sala"> 
+                                            <img src="../images/ovo com espada 1.png" alt="Imagem da sala">
+                                        </div>
+                                        <div id="nome-sala">
+                                            <p>Fã clube de um ovo </p>
+                                        </div>
+                                        <button id="priva-sala">
+                                            <img src="../images/Vector (1).png" alt="Cadeado">
+                                            <p>Public</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="../JS/script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="../JS/script.js"></script>
 </body>
 </html>

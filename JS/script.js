@@ -3,6 +3,7 @@ var btnLogin = document.getElementById("btn-login");
 var inputLogin = document.getElementById("input-login");
 var inputPassword = document.getElementById("input-pass");
 
+//evento para o botão de login
 if (btnLogin) {
   btnLogin.addEventListener("click", function() {
     var login = inputLogin.value;
@@ -21,6 +22,7 @@ if (btnLogin) {
   });
 }
 
+//evento para o botão de registrar
 if (eventRegisterButton) {
   var eventTriggered = false; // Variável de controle
 
@@ -40,12 +42,6 @@ if (eventRegisterButton) {
       var passwordInput = document.createElement("input");
       passwordInput.type = "password";
 
-      var registerButton = document.createElement("button");
-      registerButton.textContent = "Register";
-
-      var exitButton = document.createElement("button");
-      exitButton.textContent = "Exit Registration";
-
       registerButton.addEventListener("click", function() {
         var name = nameInput.value;
         var password = passwordInput.value;
@@ -62,6 +58,12 @@ if (eventRegisterButton) {
             eventTriggered = false; // Define a variável de controle como false para permitir novas execuções
         }
       });
+
+      var registerButton = document.createElement("button");
+      registerButton.textContent = "Register";
+
+      var exitButton = document.createElement("button");
+      exitButton.textContent = "Exit Registration";
 
       exitButton.addEventListener("click", function() {
         div.remove();
