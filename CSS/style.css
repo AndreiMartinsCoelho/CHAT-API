@@ -100,6 +100,9 @@
     border: solid 3px #5470FF;
     border-radius: 15px;
     margin-bottom: 5%!important;
+    color: #000!important;
+    font-size: 12pt!important;
+    font-weight: 600!important;
 }
 
 #input-login:focus{
@@ -122,35 +125,6 @@
     border: solid 3px #B4ADAD!important;
 }
 
-#input-pass{
-    display: flex;
-    padding: 15px!important;
-    width: 100%;
-    height: 8vh;
-    border: solid 3px #5470FF;
-    border-radius: 15px;
-    margin-bottom: 5%!important;
-}
-
-#input-pass:focus{
-    outline: none!important;
-}
-
-#input-pass::placeholder{
-    color: #B4ADAD!important;
-    font-size: 12pt!important;
-    font-weight: 600!important;
-}
-
-#input-pass:focus::placeholder{
-    color: #5470FF!important;
-    font-size: 12pt!important;
-    font-weight: 600!important;
-}
-
-#input-pass:focus{
-    border: solid 3px #B4ADAD!important;
-}
 
 #btn-login{
     width: 100%;
@@ -267,6 +241,9 @@
     border: solid 3px #5470FF;
     border-radius: 15px;
     margin-left: 5%!important;
+    color:#000;
+    font-size: 12pt!important;
+    font-weight: 600!important;
 }
 
 #content input:focus{
@@ -292,6 +269,14 @@
     background-color: blue!important;
     border-color: white!important;
     color: white!important;
+    cursor: pointer;
+}
+
+#content input::placeholder{
+    color: #B4ADAD!important;
+    font-size: 12pt!important;
+    font-weight: 600!important;
+    text-shadow: 0 0 0 3px #000!important;
     cursor: pointer;
 }
 
@@ -491,7 +476,7 @@ nav button:hover{
 .room-button{
     width: 40%;
     height: 8vh;
-    border: solid 3px #5470FF;
+    border: solid 3px white;
     border-radius: 15px;
     background-color: #5470FF;
     color: #fff!important;
@@ -521,7 +506,7 @@ nav button:hover{
 .room-exit-button{
     width: 16.5%;
     height: 8vh;
-    border: solid 3px #5470FF;
+    border: solid 3px white;
     border-radius: 15px;
     background-color: #5470FF;
     color: #fff!important;
@@ -561,4 +546,227 @@ nav button:hover{
     justify-content: center;
     align-items: center;
     padding: 15px!important;
+}
+
+#title-sala{
+    color: black!important;
+    font-size: 15px!important;
+    font-weight: 800!important; 
+    text-align: center;
+    text-shadow: 0 0 2px 5px #000!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px!important;
+}
+
+#chat{
+    width: 100%;
+    height: 75vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+#chat-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    border-bottom: solid 1px black;
+    padding: 10px!important;
+}
+
+#chat-box-text{
+    width: 100%;
+    text-align: left;
+    color: black!important;
+    font-size: 1rem;
+    font-weight: 800!important;
+    
+}
+
+#nome-user{
+    color: #5470FF!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#chat-box-text span{
+    color: #5470FF!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#input-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px!important;
+}
+
+#input-chat{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: solid 3px #5470FF;
+    display: flex;
+    align-items: center;
+    padding: 15px!important;
+    background-color: #171717!important;
+    color: white!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#input-chat:focus{
+    outline: none!important;
+}
+
+#input-chat::placeholder{
+    color: #B4ADAD!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#input-chat:hover::placeholder{
+    color: #5470FF!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#btn-chat{
+    width: 65%;
+    height: 10vh;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5470FF!important;
+    color: white!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    margin-left: 30%!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input-chat:focus{
+    outline: none!important;
+}
+
+#btn-chat:hover{
+    cursor: pointer;
+}
+
+#btn-chat:active{
+    background-color: blue!important;
+    border: solid 3px white!important;
+    color: white!important;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transform: translate(0, 2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#test{
+    display: flex;
+    align-items: center!important;
+    justify-content: center!important;
+    flex-direction: column!important;
+    width: 100%;
+    height: 100%;
+    margin-top: 7%!important;
+}
+
+#info2{
+    width: 40vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #171717;
+    border-radius: 15px;
+}
+
+#info2-h1{
+    color: white!important;
+    font-size: 2.0rem!important;
+    font-weight: 800!important;
+    text-align: center;
+    padding: 30px!important;
+}
+
+#info2-input, #info2-btn{
+    width: 90%;
+    height: 12vh;
+    margin-left: 5%!important;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 5%!important;
+    margin-bottom: 5%!important;
+}
+
+#info2-input input{
+    width: 100%;
+    height: 12vh;
+    border-radius: 15px;
+    border: solid 3px #5470FF;
+    padding: 15px!important;
+    color: black!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+    display: flex;
+    align-items: center;
+}
+
+#info2-btn button{
+    width: 70%;
+    height: 12vh;
+    margin-left: 15%!important;
+    border-radius: 15px;
+    border: solid 3px white;
+    background-color: #5470FF!important;
+    color: white!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#info2-btn button:hover{
+    cursor: pointer;
+}
+
+#info2-btn button:active{
+    background-color: blue!important;
+    border: solid 3px white!important;
+    color: white!important;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transform: translate(0, 2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#info2-input input:focus{
+    outline: none!important;
+    border-color: #B4ADAD;
+}
+
+#info2-input input::placeholder{
+    color: #B4ADAD!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
+}
+
+#info2-input input:hover::placeholder{
+    color: #5470FF!important;
+    font-size: 1.1rem!important;
+    font-weight: 800!important;
 }

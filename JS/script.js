@@ -1,19 +1,13 @@
 var eventRegisterButton = document.getElementById("eventRegister");
 var btnLogin = document.getElementById("btn-login");
 var inputLogin = document.getElementById("input-login");
-var inputPassword = document.getElementById("input-pass");
 
 //evento para o botão de login
 if (btnLogin) {
   btnLogin.addEventListener("click", function() {
     var login = inputLogin.value;
-    var password = inputPassword.value;
-    
     if (login == "") {
       alert("Please enter a name");
-      return;
-    } else if (password == "") {
-      alert("Please enter a password");
       return;
     } else {
       window.location.href = "home.html";
@@ -35,32 +29,23 @@ if (eventRegisterButton) {
 
       var nameInput = document.createElement("input");
       nameInput.type = "text";
+      nameInput.placeholder = "Enter your name";
 
-      var passwordLabel = document.createElement("label");
-      passwordLabel.textContent = "Password: ";
-
-      var passwordInput = document.createElement("input");
-      passwordInput.type = "password";
+      var registerButton = document.createElement("button"); // Move the creation here
+      registerButton.textContent = "Register";
 
       registerButton.addEventListener("click", function() {
         var name = nameInput.value;
-        var password = passwordInput.value;
         var contentDiv = document.getElementById("content");
         if (name == "") {
           alert("Please enter a name");
           return;
-        } else if (password == "") {
-          alert("Please enter a password");
-          return;
         } else{
           alert("Registered: " + name);
-            contentDiv.removeChild(div);
-            eventTriggered = false; // Define a variável de controle como false para permitir novas execuções
+          contentDiv.removeChild(div);
+          eventTriggered = false; // Define a variável de controle como false para permitir novas execuções
         }
       });
-
-      var registerButton = document.createElement("button");
-      registerButton.textContent = "Register";
 
       var exitButton = document.createElement("button");
       exitButton.textContent = "Exit Registration";
@@ -72,8 +57,6 @@ if (eventRegisterButton) {
 
       div.appendChild(nameLabel);
       div.appendChild(nameInput);
-      div.appendChild(passwordLabel);
-      div.appendChild(passwordInput);
       div.appendChild(registerButton);
       div.appendChild(exitButton);
 
