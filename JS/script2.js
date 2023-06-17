@@ -6,7 +6,7 @@ var btnEnter = document.getElementById("info2-btn");
 if(btnEnter){
     var eventTriggered = false; // Variável de controle
     btnEnter.addEventListener("click", function() {
-        window.location.href = "chat.html";
+        window.location.href = "index3.html";
     });
 }
 
@@ -14,7 +14,7 @@ if(btnEnter){
 if(btnEntrar){
     var eventTriggered = false; // Variável de controle
     btnEntrar.addEventListener("click", function() {
-        window.location.href = "private.html";
+        window.location.href = "index4.html";
     });
 }
 

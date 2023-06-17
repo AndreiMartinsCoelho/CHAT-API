@@ -10,7 +10,7 @@ if (btnLogin) {
       alert("Please enter a name");
       return;
     } else {
-      window.location.href = "home.html";
+      window.location.href = "index2.html";
       alert("Logged in: " + login);
     }
   });

@@ -125,16 +125,24 @@
     border: solid 3px #B4ADAD!important;
 }
 
-
 #btn-login{
     width: 100%;
-    height: 8vh;
+    padding: 20px!important;
     border: solid 3px white;
     border-radius: 15px;
     background-color: #5470FF;
     color: #fff!important;
     font-size: 12pt!important;
     font-weight: 600!important;
+    text-decoration: none!important;
+}
+
+#fala{
+    color: #B4ADAD!important;
+    font-size: 12pt!important;
+    font-weight: 600!important;
+    display: flex;
+    margin-top: 5%!important;
 }
 
 #btn-login:focus{
@@ -410,6 +418,8 @@ nav button:hover{
     font-size: 0.9rem;
     font-weight: 800;
     text-shadow: 0 0px 1px #000;
+    text-decoration: none;
+    color: #000;
 }
 
 #priva-sala:hover{
@@ -728,7 +738,7 @@ nav button:hover{
     align-items: center;
 }
 
-#info2-btn button{
+#info2-btn a{
     width: 70%;
     height: 12vh;
     margin-left: 15%!important;
@@ -738,13 +748,16 @@ nav button:hover{
     color: white!important;
     font-size: 1.1rem!important;
     font-weight: 800!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#info2-btn button:hover{
+#info2-btn a:hover{
     cursor: pointer;
 }
 
-#info2-btn button:active{
+#info2-btn a:active{
     background-color: blue!important;
     border: solid 3px white!important;
     color: white!important;
