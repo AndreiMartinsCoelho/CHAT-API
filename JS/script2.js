@@ -14,7 +14,8 @@ if(btnEnter){
 if(btnEntrar){
     var eventTriggered = false; // Variável de controle
     btnEntrar.addEventListener("click", function() {
-        window.location.href = "index4.html";
+        window.location.href = "index3.html";
+        eventTriggered = false; // Define a variável de controle como false para permitir novas execuções
     });
 }
 

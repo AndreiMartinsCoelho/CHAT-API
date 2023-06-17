@@ -418,7 +418,6 @@ nav button:hover{
     font-size: 0.9rem;
     font-weight: 800;
     text-shadow: 0 0px 1px #000;
-    text-decoration: none;
     color: #000;
 }
 
@@ -738,7 +737,7 @@ nav button:hover{
     align-items: center;
 }
 
-#info2-btn a{
+#info2-btn button{
     width: 70%;
     height: 12vh;
     margin-left: 15%!important;
@@ -753,11 +752,11 @@ nav button:hover{
     justify-content: center;
 }
 
-#info2-btn a:hover{
+#info2-btn button:hover{
     cursor: pointer;
 }
 
-#info2-btn a:active{
+#info2-btn button:active{
     background-color: blue!important;
     border: solid 3px white!important;
     color: white!important;
