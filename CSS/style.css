@@ -571,9 +571,13 @@ nav button:hover{
 }
 
 #chat{
-    width: 100%;
-    height: 70vh;
+    width: 95vw;
+    height: 72vh;
+    margin-left: 2.5%!important;
     background-color: white;
+    border: solid 3px #5470FF;
+    border-top: 0;
+    border-radius: 0 0 15px 15px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -581,8 +585,7 @@ nav button:hover{
 }
 
 #chat-box{
-    width: 100%;
-    height: 100%;
+    width: 90%;
     display: flex;
     align-items: start;
     justify-content: start;
@@ -595,7 +598,7 @@ nav button:hover{
     width: 100%;
     text-align: left;
     color: black!important;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 800!important;
     
 }
@@ -612,27 +615,28 @@ nav button:hover{
     font-weight: 800!important;
 }
 
-#input-main{
+#chat-acao{
     width: 100%;
     height: 15vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row;
-    width: 100%;
     background-color: #fff!important;
+    position: fixed;
+    bottom: 0;
 }
 
 #input-chat{
-    width: 90%;
-    height: 100%;
+    width: 70vw;
+    height: 8vh;
     border-radius: 15px;
-    border: solid 3px #5470FF;
+    border: solid 3px black;
     display: flex;
     align-items: center;
     padding: 15px!important;
-    background-color: #171717!important;
-    color: white!important;
+    background-color: white!important;
+    color: black!important;
     font-size: 1.1rem!important;
     font-weight: 800!important;
 }
@@ -642,7 +646,7 @@ nav button:hover{
 }
 
 #input-chat::placeholder{
-    color: #B4ADAD!important;
+    color: #252627!important;
     font-size: 1.1rem!important;
     font-weight: 800!important;
 }
@@ -653,32 +657,30 @@ nav button:hover{
     font-weight: 800!important;
 }
 
-#btn-chat{
-    width: 90%;
-    height: 10vh;
-    border-radius: 30px;
-    border: none;
+#submit-chat{
+    width: 15vw;
+    height: 8vh;
+    border-radius: 15px;
+    border: solid 3px black;
+    padding: 15px!important;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #5470FF!important;
     color: white!important;
-    font-size: 1.1rem!important;
+    font-size: 0.9rem!important;
     font-weight: 800!important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#input-chat:focus{
+#submit-chat:focus{
     outline: none!important;
 }
 
-#btn-chat:hover{
+#submit-chat:hover{
     cursor: pointer;
 }
 
-#btn-chat:active{
+#submit-chat:active{
     background-color: blue!important;
     border: solid 3px white!important;
     color: white!important;
